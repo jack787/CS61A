@@ -1,4 +1,8 @@
-
+1. [Higher_Order_Functions](#higher_order_functions)
+   1. [Designing functions](#designing-functions)
+   2. [Higher-order functions](#higher-order-functions)
+   3. [Lambda expressions](#lambda-expressions)
+   4. [Conditional expressions](#conditional-expressions)
 # Higher_Order_Functions
 ## Designing functions
 a `higher-order function` is:<br>
