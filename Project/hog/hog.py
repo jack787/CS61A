@@ -85,7 +85,17 @@ def hefty_hogs(player_score, opponent_score):
     opponent_score: The total score of the other player.
     """
     # BEGIN PROBLEM 2
-    "*** YOUR CODE HERE ***"
+    # "*** YOUR CODE HERE ***"
+    if opponent_score == 0:
+        return 1
+    res = player_score
+    while opponent_score:
+        digit_ = opponent_score % 10
+        f = digit_fn(digit_)
+        res = f(res)
+        opponent_score //= 10
+    return res % 30
+    # digit_fn()
     # END PROBLEM 2
 
 
