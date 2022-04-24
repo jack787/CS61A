@@ -183,8 +183,17 @@ def play(
     who = 0  # Who is about to take a turn, 0 (first) or 1 (second)
     leader = None  # To be used in problem 7
     # BEGIN PROBLEM 5
-    "*** YOUR CODE HERE ***"
+    # "*** YOUR CODE HERE ***"
     # END PROBLEM 5
+    while score0 < goal and score1 < goal:
+        if who == 0:
+            score0 += take_turn(strategy0(score0, score1), score0, score1, dice, goal)
+            score0 += hog_pile(score0, score1)
+        else:
+            score1 += take_turn(strategy1(score1, score0), score1, score0, dice, goal)
+            score1 += hog_pile(score1, score0)
+        who = next_player(who)
+
     # (note that the indentation for the problem 7 prompt (***YOUR CODE HERE***) might be misleading)
     # BEGIN PROBLEM 7
     "*** YOUR CODE HERE ***"
