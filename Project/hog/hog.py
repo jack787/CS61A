@@ -340,7 +340,17 @@ def max_scoring_num_rolls(dice=six_sided, total_samples=1000):
     1
     """
     # BEGIN PROBLEM 9
-    "*** YOUR CODE HERE ***"
+    # "*** YOUR CODE HERE ***"
+    idx = 0
+    max_num = 0
+    for i in range(1, 11):
+        res = 0
+        average_dice = make_averaged(roll_dice, total_samples)
+        res = average_dice(i, dice)
+        if res > max_num:
+            max_num = res
+            idx = i
+    return idx
     # END PROBLEM 9
 
 
