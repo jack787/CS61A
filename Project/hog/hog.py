@@ -192,6 +192,9 @@ def play(
         else:
             score1 += take_turn(strategy1(score1, score0), score1, score0, dice, goal)
             score1 += hog_pile(score1, score0)
+        leader, msg = say(score0, score1, leader)
+        if msg:
+            print(msg)
         who = next_player(who)
 
     # (note that the indentation for the problem 7 prompt (***YOUR CODE HERE***) might be misleading)
