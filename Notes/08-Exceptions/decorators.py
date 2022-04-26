@@ -2,6 +2,7 @@ def do_twice(func):
     def wrapper_do_twice(*args, **kwargs):
         t = func(*args, **kwargs)
         # func(*args, **kwargs)
+        func(*args, **kwargs)
         return t
 
     return wrapper_do_twice
@@ -40,3 +41,15 @@ def timer(func):
         return value
 
     return wrapper_timer
+
+
+def repeat(num_times):
+    def decorator_repeat(func):
+        def wrapper_repeat(*args, **kwargs):
+            for _ in range(num_times):
+                value = func(*args, **kwargs)
+            return value
+
+        return wrapper_repeat
+
+    return decorator_repeat
